@@ -1,2 +1,0 @@
-# autofact
-a c# project

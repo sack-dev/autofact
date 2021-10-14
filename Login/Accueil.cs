@@ -22,9 +22,29 @@ namespace Login
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void Panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+            //Bouton Connexion
+            FormLogin x = new FormLogin(this);
+            x.Show();
+        }
+
+        private void PictureBox3_Click(object sender, EventArgs e)
+        {
+            //Bouton Home
+            Hide();
+            Accueil x = new Accueil();
+            x.Show();
         }
     }
 }

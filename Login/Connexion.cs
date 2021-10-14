@@ -9,20 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using BCrypt.Net;
 
 namespace Login
 {
     public partial class FormLogin : Form
     {
-        public FormLogin()
+        Form accueil;
+        public FormLogin (Form accueil)
         {
             InitializeComponent();
+            this.accueil = accueil;
         }
 
+        //Connexion à la BDD
         static string dsnConnection = "Server=localhost; Database=AUTOFACT; Uid=root; Password=''; SSL Mode='None'";
         static MySqlConnection connection = new MySqlConnection(dsnConnection);
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Label1_Click(object sender, EventArgs e)
         {
 
         }
@@ -37,53 +41,50 @@ namespace Login
            
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
+            //Bouton Inscription
             Hide();
-            Inscription x = new Inscription();
+            Inscription x = new Inscription(accueil);
             x.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
+        private void Button1_Click(object sender, EventArgs e)
+        {   
+            //Bouton Se Connecter
+            connection.Open();
+            string selectSalt = "SELECT SALT FROM utilisateur WHERE MAIL='" + mailuti.Text + "'";
+            MySqlCommand cmdSalt = new MySqlCommand(selectSalt, connection);
+            string salt = cmdSalt.ExecuteScalar().ToString();
+            string select = "SELECT count(*) FROM utilisateur WHERE MAIL='" + mailuti.Text + "' AND MDP='" + BCrypt.Net.BCrypt.HashPassword(mdputi.Text, salt) + "'";
+            MySqlCommand cmd = new MySqlCommand(select, connection);
+            int result = int.Parse(cmd.ExecuteScalar().ToString());
+            if (result == 1)
             {
-                connection.Open();
-                string selectSalt = "SELECT SALT FROM utilisateur WHERE MAIL='" + mailuti.Text + "'";
-                MySqlCommand cmdSalt = new MySqlCommand(selectSalt, connection);
-                string salt = cmdSalt.ExecuteScalar().ToString();
-                string select = "SELECT count(*) FROM utilisateur WHERE MAIL='" + mailuti.Text + "' AND MDP='" + BCrypt.Net.BCrypt.HashPassword(mdputi.Text, salt) + "'";
-                MySqlCommand cmd = new MySqlCommand(select, connection);
-                int result = int.Parse(cmd.ExecuteScalar().ToString());
-                if (result == 1)
-                {
-                    MessageBox.Show("Connection Réussie !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //Redirection
-                }
-                else
-                {
-                    MessageBox.Show("Mot de Passe Incorrect !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+              Hide();
+              accueil.Hide();
+              AccueilCo x = new AccueilCo();
+              x.Show();
             }
-            catch
+            else
             {
-                MessageBox.Show("Echec lors de la connection à la base de donnée");
-                this.Close();
+                MessageBox.Show("Mot de Passe Incorrect !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void TextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void mdputi_TextChanged(object sender, EventArgs e)
+        private void Mdputi_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
+            //Affichage du Mot de Passe en Clair
             if (checkBox1.Checked)
                 mdputi.UseSystemPasswordChar = false;
             else

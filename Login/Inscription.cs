@@ -15,9 +15,11 @@ namespace Login
 {
     public partial class Inscription : Form
     {
-        public Inscription()
+        Form accueil;
+        public Inscription(Form accueil)
         {
             InitializeComponent();
+            this.accueil = accueil;
         }
 
         //Connection BDD
@@ -28,22 +30,22 @@ namespace Login
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void Label2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void TextBox3_TextChanged(object sender, EventArgs e)
         {
             
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             //Salt + Hash du Mot de passe
             string Password = mdputi.Text;
@@ -59,11 +61,12 @@ namespace Login
 
             try
             {
+                //Bouton S'Inscrire
+                connection.Open();
                 if (nomuti.Text != string.Empty && mailuti.Text != string.Empty &&  mdputi.Text != string.Empty && mdputi2.Text != string.Empty)
                 {
                     if (PasswordMatch == verifPasswordMatch)
                     {
-                        connection.Open();
                         string select = "SELECT * FROM `utilisateur` WHERE `MAIL`= '" + mailuti.Text + "'";
                         MySqlCommand read = new MySqlCommand(select, connection);
                         MySqlDataReader rd = read.ExecuteReader();
@@ -81,10 +84,11 @@ namespace Login
                             cmd.Parameters.AddWithValue("@email", mailuti.Text);
                             cmd.Parameters.AddWithValue("@mdp", verifHash);
                             cmd.Parameters.AddWithValue("@salt", verifSalt);
-
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Inscription Réussie", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Close();
+
+                            Hide();
+                            FormLogin x = new FormLogin(accueil);
+                            x.Show();
                         }
                     }
                     else
@@ -107,17 +111,18 @@ namespace Login
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
+            //Bouton Annuler
             Close();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void Label3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void mdputi2_TextChanged(object sender, EventArgs e)
+        private void Mdputi2_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -127,17 +132,17 @@ namespace Login
 
         }
 
-        private void mdp_Click(object sender, EventArgs e)
+        private void Mdp_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void mailuti_TextChanged(object sender, EventArgs e)
+        private void Mailuti_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void mdputi_TextChanged(object sender, EventArgs e)
+        private void Mdputi_TextChanged(object sender, EventArgs e)
         {
 
         }

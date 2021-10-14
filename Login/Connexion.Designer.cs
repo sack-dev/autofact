@@ -51,14 +51,16 @@ namespace Login
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.checkBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(287, 135);
+            this.checkBox1.ForeColor = System.Drawing.SystemColors.Window;
+            this.checkBox1.Location = new System.Drawing.Point(320, 150);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(156, 20);
-            this.checkBox1.TabIndex = 1;
+            this.checkBox1.TabIndex = 3;
             this.checkBox1.Text = "Afficher les caractères";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkBox1.UseVisualStyleBackColor = false;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
             // 
             // btn_redirection
             // 
@@ -66,14 +68,14 @@ namespace Login
             this.btn_redirection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_redirection.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_redirection.ForeColor = System.Drawing.SystemColors.Window;
-            this.btn_redirection.Location = new System.Drawing.Point(295, 164);
+            this.btn_redirection.Location = new System.Drawing.Point(315, 175);
             this.btn_redirection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_redirection.Name = "btn_redirection";
             this.btn_redirection.Size = new System.Drawing.Size(150, 30);
             this.btn_redirection.TabIndex = 5;
             this.btn_redirection.Text = "Créer un Compte";
             this.btn_redirection.UseVisualStyleBackColor = false;
-            this.btn_redirection.Click += new System.EventHandler(this.button2_Click);
+            this.btn_redirection.Click += new System.EventHandler(this.Button2_Click);
             // 
             // btn_connection
             // 
@@ -81,54 +83,58 @@ namespace Login
             this.btn_connection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_connection.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_connection.ForeColor = System.Drawing.SystemColors.Window;
-            this.btn_connection.Location = new System.Drawing.Point(82, 164);
+            this.btn_connection.Location = new System.Drawing.Point(85, 175);
             this.btn_connection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_connection.Name = "btn_connection";
             this.btn_connection.Size = new System.Drawing.Size(150, 30);
             this.btn_connection.TabIndex = 4;
             this.btn_connection.Text = "Se Connecter";
             this.btn_connection.UseVisualStyleBackColor = false;
-            this.btn_connection.Click += new System.EventHandler(this.button1_Click);
+            this.btn_connection.Click += new System.EventHandler(this.Button1_Click);
             // 
             // mdputi
             // 
-            this.mdputi.Location = new System.Drawing.Point(268, 110);
+            this.mdputi.Location = new System.Drawing.Point(300, 125);
             this.mdputi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mdputi.Name = "mdputi";
             this.mdputi.Size = new System.Drawing.Size(175, 20);
             this.mdputi.TabIndex = 2;
             this.mdputi.UseSystemPasswordChar = true;
-            this.mdputi.TextChanged += new System.EventHandler(this.mdputi_TextChanged);
+            this.mdputi.TextChanged += new System.EventHandler(this.Mdputi_TextChanged);
             // 
             // mailuti
             // 
-            this.mailuti.Location = new System.Drawing.Point(268, 72);
+            this.mailuti.Location = new System.Drawing.Point(300, 75);
             this.mailuti.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mailuti.Name = "mailuti";
             this.mailuti.Size = new System.Drawing.Size(175, 20);
             this.mailuti.TabIndex = 1;
-            this.mailuti.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.mailuti.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // mdp
             // 
             this.mdp.AutoSize = true;
-            this.mdp.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mdp.Location = new System.Drawing.Point(79, 112);
+            this.mdp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.mdp.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mdp.ForeColor = System.Drawing.SystemColors.Window;
+            this.mdp.Location = new System.Drawing.Point(75, 125);
             this.mdp.Name = "mdp";
-            this.mdp.Size = new System.Drawing.Size(116, 18);
+            this.mdp.Size = new System.Drawing.Size(133, 21);
             this.mdp.TabIndex = 1;
             this.mdp.Text = "Mot De Passe :";
             // 
             // Email
             // 
             this.Email.AutoSize = true;
-            this.Email.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Email.Location = new System.Drawing.Point(79, 74);
+            this.Email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.Email.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Email.ForeColor = System.Drawing.SystemColors.Window;
+            this.Email.Location = new System.Drawing.Point(75, 75);
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(61, 18);
+            this.Email.Size = new System.Drawing.Size(71, 21);
             this.Email.TabIndex = 0;
             this.Email.Text = "E-Mail :";
-            this.Email.Click += new System.EventHandler(this.label1_Click);
+            this.Email.Click += new System.EventHandler(this.Label1_Click);
             // 
             // label1
             // 
@@ -147,7 +153,7 @@ namespace Login
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(484, 63);
+            this.panel1.Size = new System.Drawing.Size(484, 250);
             this.panel1.TabIndex = 1;
             // 
             // FormLogin
@@ -159,11 +165,11 @@ namespace Login
             this.Controls.Add(this.btn_redirection);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btn_connection);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.Email);
             this.Controls.Add(this.mdp);
             this.Controls.Add(this.mdputi);
             this.Controls.Add(this.mailuti);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

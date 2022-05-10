@@ -2861,9 +2861,19 @@
             stores the height of MinimizedItem 
             </summary>
         </member>
+        <member name="F:Syncfusion.Windows.Shared.TileViewControl.minimizedItemWidth">
+            <summary>
+            Stores the width of the minimized tile item
+            </summary>
+        </member>
         <member name="M:Syncfusion.Windows.Shared.TileViewControl.GetTileViewItemsSizes">
             <summary>
             Method to Get the size of the TileViewItems.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Windows.Shared.TileViewControl.CalculateMinimizedItemWidth">
+            <summary>
+            Method for calculating the MinimizedItem Width
             </summary>
         </member>
         <member name="M:Syncfusion.Windows.Shared.TileViewControl.CalculateMinimizedItemHeight">
@@ -3646,6 +3656,11 @@
             Stores the height of the Minimized TileViewItem
             </summary>
         </member>
+        <member name="F:Syncfusion.Windows.Shared.TileViewItem.onMinimizedWidth">
+            <summary>
+            Stores the width of the Minimized Items
+            </summary>
+        </member>
         <member name="F:Syncfusion.Windows.Shared.TileViewItem.TileViewItemIndex">
             <summary>
             stores the details of index of report card
@@ -4084,6 +4099,20 @@
             </summary>
             <param name="d">The d.</param>
             <param name="e">The <see cref="T:System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Syncfusion.Windows.Shared.TileViewItem.OnMinimizedHeightPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Fire when the TileViewItem OnMinimizedHeight Property Changed
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Syncfusion.Windows.Shared.TileViewItem.OnMinimizedWidthPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Fire when the TileViewItem OnMinimizedWidth Property Changed
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
         </member>
         <member name="M:Syncfusion.Windows.Shared.TileViewItem.OnIsSelectedPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
             <summary>

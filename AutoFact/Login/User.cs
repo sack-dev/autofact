@@ -6,16 +6,16 @@ namespace Login
     {
         public User(string username, string mail)
         {
-            this.username = username;
-            this.mail = mail;
+            this.Username = username;
+            this.Mail = mail;
         }
 
-        public string username { get; set; }
-        public string mail { get; set; }
+        public string Username { get; set; }
+        public string Mail { get; set; }
 
-        public bool verifMail()
+        public bool VerifMail()
         {
-            return Regex.IsMatch(this.mail, @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
+            return Regex.IsMatch(this.Mail, @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
         }
     }
 }

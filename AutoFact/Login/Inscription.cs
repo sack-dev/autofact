@@ -60,7 +60,7 @@ namespace Login
                 connection.Open();
                 if (NomUti.Text != string.Empty && MailUti.Text != string.Empty && MdpUti.Text != string.Empty && MdpUti2.Text != string.Empty)
                 {
-                    if (aUser.verifMail())
+                    if (aUser.VerifMail())
                     {
 
                         //Vérification des 2 Mots de Passes

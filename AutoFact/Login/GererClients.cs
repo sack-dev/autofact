@@ -37,16 +37,6 @@ namespace Login
 
         private void BindGrid()
         {
-            /*connection.Open();
-             string a = "SELECT* FROM client";
-             MySqlCommand command = new MySqlCommand(a, connection);
-             MySqlDataReader reader = command.ExecuteReader();
-             while (reader.Read())
-             {
-                 listClient.Add(new Client(int.Parse(reader["IDC"].ToString()), reader["NOM"].ToString(), reader["MAIL"].ToString(), reader["TEL"].ToString(), reader["ADRESSE"].ToString(), reader["VILLE"].ToString(), int.Parse(reader["CODE_POSTAL"].ToString())));
-             }
-             connection.Close();*/
-
             //Création des colonnes IDC, Nom, Mail, Telephone, Adresse, Ville et Code Postal
             DataGridView.AllowUserToAddRows = false;
             DataGridView.Columns.Clear();

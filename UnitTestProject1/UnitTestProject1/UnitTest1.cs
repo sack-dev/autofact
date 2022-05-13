@@ -8,17 +8,17 @@ namespace UnitTestProject1
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestFalse()
         {
             User Clem = new User("Clement", "clement.c");
-            Assert.AreEqual(false, Clem.verifMail());
+            Assert.AreEqual(false, Clem.VerifMail());
         }
 
         [TestMethod]
-        public void TestMethod2()
+        public void TestTrue()
         {
             User Ad = new User("Adeline", "adeline.rochette@gmail.com");
-            Assert.AreEqual(true, Ad.verifMail());
+            Assert.AreEqual(true, Ad.VerifMail());
         }
     }
 }

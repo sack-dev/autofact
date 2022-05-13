@@ -1743,7 +1743,7 @@
             <param name="textBounds"></param>
             <param name="isSameLine"></param>
         </member>
-        <member name="M:Syncfusion.DocToPdfConverter.Rendering.PDFDrawingContext.IsSameLine(System.Single,System.Single,Syncfusion.DocIO.DLS.WCharacterFormat,Syncfusion.DocIO.DLS.WCharacterFormat)">
+        <member name="M:Syncfusion.DocToPdfConverter.Rendering.PDFDrawingContext.IsSameLine(System.Single,System.Single,Syncfusion.DocIO.DLS.WCharacterFormat,Syncfusion.DocIO.DLS.WCharacterFormat,System.Boolean)">
             <summary>
             Check that can we extend the previous Underline to the next text. 
             </summary>
@@ -3231,6 +3231,21 @@
             <param name="checkbox">The checkbox.</param>
             <param name="ltWidget">The lt widget.</param>
         </member>
+        <member name="M:Syncfusion.DocToPdfConverter.Rendering.PDFDrawingContext.DrawPictureFill(System.Byte[],Syncfusion.Pdf.Graphics.PdfPath,System.Drawing.RectangleF,System.Single)">
+            <summary>
+            Draw picture fill 
+            </summary>
+            <param name="imageBytes">Imagebytes</param>
+            <param name="path">Shapes path</param>
+            <param name="bounds">Layouted widget bounds</param>
+        </member>
+        <member name="M:Syncfusion.DocToPdfConverter.Rendering.PDFDrawingContext.ApplyImageTransparency(System.Drawing.Imaging.ImageAttributes,System.Single)">
+            <summary>
+            Apply transparency for image
+            </summary>
+            <param name="imageAttributes">Represents image Attributes</param>
+            <param name="transparency">Represents image transparency</param>
+        </member>
         <member name="M:Syncfusion.DocToPdfConverter.Rendering.PDFDrawingContext.GetPdfLineJoin(Syncfusion.DocIO.ReaderWriter.DataStreamParser.Escher.LineJoin)">
             <summary>
             Convert the LineJoin as PdfLineJoin
@@ -3383,14 +3398,14 @@
             <param name="txtRange"></param>
             <returns></returns>
         </member>
-        <member name="M:Syncfusion.DocToPdfConverter.Rendering.PDFDrawingContext.GetAscent(System.Drawing.Font)">
+        <member name="M:Syncfusion.DocToPdfConverter.Rendering.PDFDrawingContext.GetAscent(System.Drawing.Font,Syncfusion.Office.FontScriptType)">
             <summary>
             Gets the ascent
             </summary>
             <param name="font">The Font.</param>
             <returns></returns>
         </member>
-        <member name="M:Syncfusion.DocToPdfConverter.Rendering.PDFDrawingContext.GetDescent(System.Drawing.Font)">
+        <member name="M:Syncfusion.DocToPdfConverter.Rendering.PDFDrawingContext.GetDescent(System.Drawing.Font,Syncfusion.Office.FontScriptType)">
             <summary>
             Gets the descent
             </summary>

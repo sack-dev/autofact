@@ -169,7 +169,7 @@ namespace Login
 
             foreach (DataGridViewRow ligne in dataGridView1.Rows)
             {
-                if (ligne.Cells[0].Value != null)
+                if (ligne.Cells[0].Value != null && Convert.ToInt32(ligne.Cells[0].Value) != 0)
                 {
                     //Informations Prestations
                     WTableRow row = table.AddRow(true, false);
@@ -394,7 +394,7 @@ namespace Login
 
             foreach (DataGridViewRow ligne in dataGridView1.Rows)
             {
-                if (ligne.Cells[0].Value != null)
+                if (ligne.Cells[0].Value != null && Convert.ToInt32(ligne.Cells[0].Value) != 0)
                 {
                     //Informations Prestations
                     WTableRow row = table.AddRow(true, false);
@@ -463,7 +463,7 @@ namespace Login
             document.Replace("#TableauTotaux#", "", true, true);
 
             //Devenir BDD
-            string InsertDev = "INSERT INTO devenir(IDD, IDT, DATE) VALUES ('" + IDD + "' , 1 , '" + DateTime.Now.ToString("yyyy-MM-dd") + "')ON DUPLICATE KEY UPDATE IDD = '" + IDD + "'";
+            string InsertDev = "INSERT INTO devenir(IDD, IDT, DATE) VALUES ('" + IDD + "' , 2 , '" + DateTime.Now.ToString("yyyy-MM-dd") + "')ON DUPLICATE KEY UPDATE IDD = '" + IDD + "'";
             MySqlCommand dev = new MySqlCommand(InsertDev, connection);
             dev.ExecuteNonQuery();
 

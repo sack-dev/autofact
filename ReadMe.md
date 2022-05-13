@@ -5,7 +5,7 @@
 ## Prerequisites and Installation
 ===========================================================================
 - Visual Studio 2019 or 2022
-- WAMP
+- SQL DataBase
 - Unpack the folder if not already done
 - Insert the folder AutoFact in the input directory of your Visual Studio (optional)
 - Import the .sql file into PhpMyAdmin (PhpMyAdmin is included in WAMP)
@@ -16,7 +16,7 @@
 ===========================================================================
 - Open the AutoFact.sln file using Visual Studio
 - Start the program in Visual Studio
-- Start WAMP
+- Start your DataBase
 - Click on the authentication button
 - Create an account when you first use it (then you just have to log in with your account)
 - Once connected, you can thanks to the dedicated buttons:

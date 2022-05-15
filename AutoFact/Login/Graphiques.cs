@@ -68,7 +68,7 @@ namespace Login
             int IDU = int.Parse(idu.ExecuteScalar().ToString());
 
             //Recupération du chiffre d'affaire par mois en fonction de l'année choisie
-            string cmd = @"SELECT MONTH(DATE) AS MONTH, SUM(PRIXTOTAL) AS SOMME FROM document INNER JOIN devenir ON document.IDD = devenir.IDD INNER JOIN utilisateur ON document.IDU = utilisateur.IDU WHERE IDT= 1 AND DATE LIKE '" + comboBox1.Text + "-%' AND utilisateur.IDU = '" + IDU + "' GROUP BY MONTH(DATE)";
+            string cmd = @"SELECT MONTH(DATE) AS MONTH, SUM(PRIXTOTAL) AS SOMME FROM document INNER JOIN devenir ON document.IDD = devenir.IDD INNER JOIN utilisateur ON document.IDU = utilisateur.IDU WHERE IDT= 2 AND DATE LIKE '" + comboBox1.Text + "-%' AND utilisateur.IDU = '" + IDU + "' GROUP BY MONTH(DATE)";
             MySqlCommand command = new MySqlCommand(cmd, connection);
             MySqlDataReader dr = command.ExecuteReader();
 
